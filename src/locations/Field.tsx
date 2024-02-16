@@ -71,7 +71,12 @@ const Field: React.FC = () => {
         setIsLoading(false);
         sdk.notifier.success("Uploaded and now processing!");
 
-        await sdk.cma.asset.processForAllLocales({}, unprocessedAsset);
+        const processedAsset = await sdk.cma.asset.processForAllLocales(
+          {},
+          unprocessedAsset
+        );
+
+        setExistingAsset(processedAsset);
 
         sdk.field.setValue({
           sys: {
@@ -94,7 +99,9 @@ const Field: React.FC = () => {
     <Flex flexDirection="column" gap="spacingXs">
       {existingAsset && (
         <AssetCard
-          onClick={() => sdk.navigator.openAsset(assetId, { slideIn: true })}
+          onClick={() =>
+            sdk.navigator.openAsset(existingAsset.sys.id, { slideIn: true })
+          }
           src={`${existingAsset.fields.file[sdk.field.locale].url}?h=500`}
         />
       )}
