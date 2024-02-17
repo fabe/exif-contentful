@@ -4,55 +4,29 @@ Writes EXIF data to a JSON field in Contentful.
 
 ## Usage
 
-After installation, create or use a Media field and assign the EXIF app to the field via the Appearance tab in the settings. When uploading an asset through this field, all EXIF data will be added to a field in the same entry with type JSON and ID `exif`. To customize this, check [Field.tsx](/src/locations/Field.tsx).
+After installation, create or use a Media field and assign the EXIF app to the field via the Appearance tab in the settings. When uploading an asset through this field, the EXIF data will be added to a field in the same entry with type JSON and ID `exif`. To customize the field ID and the EXIF tags, check [Field.tsx](/src/locations/Field.tsx).
 
-![Preview](.github/preview.png)
+![Preview](.github/preview.jpeg)
 
 Then, use the value of `exif` field in the CDA. Example output:
 
 ```json
 {
-  "Make": "FUJIFILM",
-  "Model": "X-T30 II",
-  "Orientation": 1,
-  "XResolution": {},
-  "YResolution": {},
-  "ResolutionUnit": 2,
-  "Software": "Adobe Lightroom 7.1.2 (Macintosh)",
-  "DateTime": "2024:01:01 00:00:00",
-  "ExifIFDPointer": 212,
-  "ExposureTime": {},
-  "FNumber": {},
-  "ExposureProgram": "Normal program",
-  "ISOSpeedRatings": 320,
-  "ExifVersion": "0232",
-  "DateTimeOriginal": "2024:01:01 00:00:00",
-  "DateTimeDigitized": "2024:01:01 00:00:00",
-  "ShutterSpeedValue": 7.643855995239512,
-  "ApertureValue": {},
-  "BrightnessValue": 5.22,
-  "ExposureBias": 0,
-  "MaxApertureValue": {},
-  "MeteringMode": "Pattern",
-  "LightSource": "Unknown",
-  "Flash": "Flash did not fire",
-  "FocalLength": {},
-  "ColorSpace": 1,
-  "PixelXDimension": 6240,
-  "PixelYDimension": 4160,
-  "FocalPlaneXResolution": {},
-  "FocalPlaneYResolution": {},
-  "FocalPlaneResolutionUnit": 3,
-  "SensingMethod": "One-chip color area sensor",
-  "FileSource": "DSC",
-  "SceneType": "Directly photographed",
-  "CustomRendered": "Normal process",
-  "ExposureMode": 0,
-  "WhiteBalance": "Auto white balance",
-  "FocalLengthIn35mmFilm": 41,
-  "SceneCaptureType": "Standard",
-  "Sharpness": "Normal",
-  "SubjectDistanceRange": "Unknown",
-  "thumbnail": {}
+  "Make": "Apple",
+  "Model": "iPhone 14 Pro",
+  "ExposureTime": 0.0013333333333333333,
+  "FNumber": 2.8,
+  "ISO": 32,
+  "DateTimeOriginal": "2023-11-27T12:31:36.000Z",
+  "FocalLength": 9,
+  "FocalLengthIn35mmFormat": 77,
+  "LensMake": "Apple",
+  "LensModel": "iPhone 14 Pro back camera 9mm f/2.8",
+  "GPSLatitudeRef": "N",
+  "GPSLatitude": [35, 12.02934, 0],
+  "GPSLongitudeRef": "E",
+  "GPSLongitude": [139, 1.81482, 0],
+  "latitude": 35.200489,
+  "longitude": 139.030247
 }
 ```
